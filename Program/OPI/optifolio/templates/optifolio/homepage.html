@@ -1,0 +1,28 @@
+
+<html>
+<head>
+
+</head>
+<body>
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+            <a class="btn btn-warning" href="{% url 'login' %}"> &#8592; Zaloguj się</a>
+            <a class="btn btn-warning" href="{% url 'register' %}"> &#8592; Zarejestruj się</a>
+			<table class="table table-sm">
+				<h3>Panel Informacyjny domowy</h3>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
+
+</body>
+
+
+
+</html>

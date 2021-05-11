@@ -12,6 +12,7 @@ from .models import *
 from .forms import CreateUserForm, CustomerForm
 from .decorators import unauthenticated_user,allowed_users,admin_only
 
+
 @unauthenticated_user
 def registerPage(request):
     form = CreateUserForm()
@@ -37,7 +38,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('dashboard')
         else:
             messages.info(request, 'Username OR Password is incorrect')
 
@@ -47,7 +48,7 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('homepage')
 
 
 @login_required(login_url='login')
@@ -73,11 +74,16 @@ def accountSettings(request):
 
 
 
+@unauthenticated_user
+def homepage(request):
+    
+    context = {}
+    return render(request, 'optifolio/homepage.html', context)
 
 
-@login_required(login_url='login')
+@login_required(login_url='homepage')
 @admin_only
-def home(request):
+def dashboard(request):
     
     context = {}
     return render(request, 'optifolio/dashboard.html', context)
