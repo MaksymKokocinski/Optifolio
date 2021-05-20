@@ -7,37 +7,49 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" type="text/css" href="..\static\css\main.css">
+    <link href="https://fonts.googleapis.com/css?family=Mulish&display=swap" rel="stylesheet" />
 
-
+    <style>
+     body {background-color: gray;}
+    </style>
 
 </head>
-<body>
+<body class="log">
 
 
-<div class="card bg-light">
+<div class="kontener2">
 <article class="card-body mx-auto" style="max-width: 400px;">
-	<h4 class="card-title mt-3 text-center">Stwórz konto</h4>
+	<h4 class="card-title mt-3 text-center" style="font-family:Mulish;font-weight:bold;font-size:36px;">Stwórz konto</h4>
 	
 	<form method="POST" action="">
         {% csrf_token %}
+       <div class="inp"> <span>Nazwa użytkownika:</span>
         <div class="form-group input-group">
             <div class="input-group-prepend">
-                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                <span class="input-group-text"> <i class="fa fa-user"></i></span>
             </div>
             {{form.username}}
         </div> <!-- form-group// -->
+        <br>
+        <span>Adres e-mail:</span>
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
             </div>
             {{form.email}}
         </div> <!-- form-group// -->
+        <span class="szarak" style="font-size:13px; margin-top:-13px;position:absolute;">Nikomu nie udostępniamy Twojego adresu email</span>
+        <br>
+        <span>Hasło:</span>
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
             </div>
             {{form.password1}}
         </div> <!-- form-group// -->
+        <br>
+        <span>Potwierdź Hasło:</span>
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
@@ -45,17 +57,16 @@
             {{form.password2}}
         </div> <!-- form-group// -->                                      
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block"> Zarejestruj się </button>
+            <button type="submit" class="rej"> Zarejestruj się </button>
         </div> <!-- form-group// -->      
         <p>{{form.errors}}</p>
 
-        <p class="text-center">Masz konto? <a href="{% url 'login' %}">Zaloguj się</a> </p>                                                                 
+        <p class="text-center"><span class="szarak">Masz konto?</span> <a href="{% url 'login' %}">Zaloguj się</a> </p>                                                                 
     </form>
 </article>
 </div> <!-- card.// -->
 
-</div> 
-<!--container end.//-->
+
 
 <script>
         /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
