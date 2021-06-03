@@ -1,3 +1,16 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optifolio</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<link rel="stylesheet" type="text/css" href="..\static\css\main.css">
+<link href="https://fonts.googleapis.com/css?family=Mulish&display=swap" rel="stylesheet" />
+</head>
+
 {% load static %}
 <style>
   .hello-msg{
@@ -7,12 +20,9 @@
   }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-inverse navbar-fixed-left navbar-dark bg-dark">
     <img src = "{% static 'images/logo_P1OydgH.png'%}">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div id="navbarNav">
       <ul class="navbar-nav">
         {% if request.user.is_staff %}
         <li class="nav-item active">
@@ -26,6 +36,7 @@
         {% endif %}
       </ul>
     </div>
-    <span class="hello-msg">Hello, {{request.user}}</span>
+    <span class="hello-msg">Hello1, {{request.user}}</span>
     <span><a class="hello-msg"  href="{% url 'logout' %}">Logout</a></span>
   </nav>
+  </html>
