@@ -97,7 +97,20 @@ def customer(request, pk):
     context = {'customer':customer,}
     return render(request, 'optifolio/customer.html',context)
 
+##################################
 
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['admin'])
+def summaryPage(request):
 
+    context = {}
+    return render(request, 'optifolio/summary.html', context)
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['admin'])
+def visualisationPage(request):
+
+    context = {}
+    return render(request, 'optifolio/visualisationpage.html', context)
 
 

@@ -28,4 +28,8 @@ urlpatterns = [
     ,name="password_reset_confirm"),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="optifolio/password_reset_done.html")
     ,name="password_reset_complete"),
+
+
+    path('summary/', views.summaryPage, name="summary"),
+    path('visualisationpage/', views.visualisationPage, name="visualisationpage"),
 ]
