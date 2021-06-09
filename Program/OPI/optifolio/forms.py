@@ -19,8 +19,14 @@ class CreateUserForm(UserCreationForm):
         fields = ['username','email','password1','password2']
 
 
+class CreatePurchase(forms.Form):
+    class Meta:
+        model = Purchase()
+        fields = ['name', 'b/s', 'date', 'amount', 'price', 'fare']
 
 
+
+#dane o utworzeniu 
 
 
 

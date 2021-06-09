@@ -18,7 +18,7 @@ urlpatterns = [
     path('user/', views.userPage, name='user-page'), 
     path('account/', views.accountSettings, name ='account'),
  
-
+    #scieżka do portfolio
 
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name="optifolio/password_reset.html")
     ,name="reset_password"),
