@@ -1,4 +1,5 @@
 from django.db import models
+from djmoney.models.fields import MoneyField
 from django.contrib.auth.models import User
 
 class Customer(models.Model):
@@ -17,10 +18,12 @@ class VisTemp(models.Model):
                     Customer,
                     on_delete=models.CASCADE,)
     title = models.CharField(max_length=200, null=True)
-    buy_sell = models.CharField(max_length=200, null=True)
-    date = models.DateTimeField(auto_now_add = True,null=True)
-    shares_number = models.CharField(max_length=200, null=True)
-    course = models.CharField(max_length=200, null=True)
+    buy_sell = models.CharField(max_length=1, null=True)
+    date = models.DateTimeField()
+    shares_number = models.DecimalField(decimal_places=2,default=0)
+    course = models.DecimalField(decimal_places=2,default=0)
+    fare = models.DecimalField(decimal_places=2,default=0)
+
 
     def __str__(self):
         return self.name
