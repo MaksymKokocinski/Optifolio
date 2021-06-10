@@ -271,9 +271,14 @@ a{
   [class*="col-"] {
       padding: 1rem;
   }
+  .men{
+    height: 100%;
+  }
   
-  
-  
+  .men:hover
+  {
+    background-color: #9FA2B4;
+  }
   
   
   /*
