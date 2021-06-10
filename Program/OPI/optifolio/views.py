@@ -109,8 +109,8 @@ def summaryPage(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
 def visualisationPage(request):
+    visdata = VisData.objects.all()
 
-    context = {}
-    return render(request, 'optifolio/visualisationpage.html', context)
+    return render(request, 'optifolio/visualisationpage.html', {'visdata':visdata})
 
 

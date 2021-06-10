@@ -13,10 +13,8 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 		
-class VisTemp(models.Model):
-    user_name = models.ForeignKey(
-                    Customer,
-                    on_delete=models.CASCADE,)
+class VisData(models.Model):
+    user_name = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200, null=True)
     buy_sell = models.CharField(max_length=1, null=True)
     date = models.DateTimeField(auto_now_add = True,null=True)
@@ -26,4 +24,4 @@ class VisTemp(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.title

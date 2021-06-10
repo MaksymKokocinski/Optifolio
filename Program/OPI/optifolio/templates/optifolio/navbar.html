@@ -26,15 +26,7 @@
       <ul class="navbar-nav">
         {% if request.user.is_staff %}
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'dashboard' %}">Podsumowanie</a>
-        </li>
-        
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'navbar' %}">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'optimalization' %}">Optymalizacja</a>
+          <a class="nav-link" href="{% url 'summary' %}">Podsumowanie</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'visualisationpage' %}">Wizualizacja</a>
@@ -42,10 +34,11 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'account' %}">Ustawienia</a>
         </li>
+        {% else %}
         {% endif %}
       </ul>
     </div>
-    <span class="hello-msg ml-auto">Hello1, {{request.user}}</span>
+    <span class="hello-msg ml-auto">Hello, {{request.user}}</span>
     <span><a class="hello-msg ml-auto"  href="{% url 'logout' %}">Logout</a></span>
   </nav>
   </html>
