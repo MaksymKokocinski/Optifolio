@@ -14,28 +14,16 @@
       </tr>
     </thead>
     <tbody>
+      {% for temp in visdata %}
       <tr>
-        {% for temp in visdata %}
         <th scope="row">{{ temp.title }}</th>
         <td>{{ temp.buy_sell }}</td>
         <td>{{ temp.date }}</td>
         <td>{{ temp.shares_number }}</td>
         <td>{{ temp.course }}</td>
         <td>{{ temp.fares }}</td>
-        {% endfor %}
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
   

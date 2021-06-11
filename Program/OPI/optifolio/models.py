@@ -18,7 +18,7 @@ class VisData(models.Model):
     title = models.CharField(max_length=200, null=True)
     buy_sell = models.CharField(max_length=1, null=True)
     date = models.DateTimeField(auto_now_add = True,null=True)
-    shares_number = models.DecimalField(decimal_places=2,default=0,max_digits=999)
+    shares_number = models.DecimalField(decimal_places=0,default=0,max_digits=999)
     course = models.DecimalField(decimal_places=2,default=0,max_digits=999)
     fare = models.DecimalField(decimal_places=2,default=0,max_digits=999)
 
