@@ -12,6 +12,12 @@ from .models import *
 from .forms import CreateUserForm, CustomerForm
 from .decorators import unauthenticated_user,allowed_users,admin_only
 
+<<<<<<< Updated upstream
+=======
+from django.db.models import Count, Sum
+
+#from . import csv_reader
+>>>>>>> Stashed changes
 
 @unauthenticated_user
 def registerPage(request):
