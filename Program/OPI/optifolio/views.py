@@ -127,4 +127,37 @@ def summaryPage(request):
     context = {'comp_number': comp_number, 'shares_num':shares_num_sum, 'profit_earned': profit_sum,}
     return render(request, 'optifolio/summary.html',context)
 
+def pie_chart(request):
+    labels = []
+    data = []
+
+    visdata_trans = VisData.objects.order_by('title')
+    for stock in visdata_trans:
+        if stock.shares_number > 0 :
+            labels.append(stock.name)
+            data.append(stock.shares_number)
+
+    return render(request, 'chart.html', {
+        'labels': labels,
+        'data': data,
+    })
+
+def transaction_val(request):
+    transaction = VisData.objects.all()
+    money_spent = 0
+    for stock in transaction:
+        if stock.buy_sell == "+":
+            money_spent += stock.course*stock.shares_number + stock.fare
+        elif stock.buy_sell == "-":
+            money_spent -= stock.course*stock.shares_number 
+            money_spent += stock.fare
+    return money_spent
+
+
+
+
+
+    
+    
+
 
