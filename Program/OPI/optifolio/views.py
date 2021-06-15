@@ -42,7 +42,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('summary')
+            return redirect('dashboard')
         else:
             messages.info(request, 'Username OR Password is incorrect')
 
