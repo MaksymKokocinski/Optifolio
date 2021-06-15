@@ -5,23 +5,29 @@
 <table class="table">
     <thead class="thead-dark">
       <tr>
+
+        <th scope="col">Id</th>
         <th scope="col">Nazwa</th>
         <th scope="col">Kup/Sprzedaj</th>
-        <th scope="col">Data dodania</th>
+        <th scope="col">Data</th>
+        <th scope="col">Godzina</th>
         <th scope="col">Liczba akcji</th>
-        <th scope="col">Kurs</th>
+        <th scope="col">Kwota</th>
+
         <th scope="col">Opłata</th>
       </tr>
     </thead>
     <tbody>
       {% for temp in visdata %}
       <tr>
+        <td>{{ temp.visdata_id }}</td>
         <th scope="row">{{ temp.title }}</th>
         <td>{{ temp.buy_sell }}</td>
         <td>{{ temp.date }}</td>
+        <td>{{ temp.hour }}</td>
         <td>{{ temp.shares_number }}</td>
         <td>{{ temp.course }}</td>
-        <td>{{ temp.fares }}</td>
+        <td>{{ temp.fare }}</td>
       </tr>
       {% endfor %}
     </tbody>
