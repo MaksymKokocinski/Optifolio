@@ -12,12 +12,10 @@ from .models import *
 from .forms import CreateUserForm, CustomerForm
 from .decorators import unauthenticated_user,allowed_users,admin_only
 
-<<<<<<< Updated upstream
-=======
+
 from django.db.models import Count, Sum
 
 #from . import csv_reader
->>>>>>> Stashed changes
 
 @unauthenticated_user
 def registerPage(request):
@@ -44,7 +42,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('dashboard')
+            return redirect('summary')
         else:
             messages.info(request, 'Username OR Password is incorrect')
 
@@ -107,16 +105,28 @@ def customer(request, pk):
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
-def summaryPage(request):
+def visualisationPage(request):
 
-    context = {}
-    return render(request, 'optifolio/summary.html', context)
+    visdata = VisData.objects.all()
+
+    return render(request, 'optifolio/visualisationpage.html', {'visdata':visdata})
+
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
-def visualisationPage(request):
+def summaryPage(request):
+    visdata = VisData.objects.all()
+    
+    comp_number = visdata.count()
 
-    context = {}
-    return render(request, 'optifolio/visualisationpage.html', context)
+    shares_num = visdata.aggregate(Sum(('shares_number')))
+    shares_num_sum = (shares_num['shares_number__sum'])
+
+    profit_earned = visdata.aggregate(Sum(('course')))
+    profit_sum = ("%.3f" % profit_earned['course__sum'])
+    
+    
+    context = {'comp_number': comp_number, 'shares_num':shares_num_sum, 'profit_earned': profit_sum,}
+    return render(request, 'optifolio/summary.html',context)
 
 

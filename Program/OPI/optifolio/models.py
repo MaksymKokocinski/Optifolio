@@ -13,16 +13,7 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 		
-<<<<<<< Updated upstream
-class VisTemp(models.Model):
-    user_name = models.ForeignKey(
-                    Customer,
-                    on_delete=models.CASCADE,)
-    title = models.CharField(max_length=200, null=True)
-    buy_sell = models.CharField(max_length=1, null=True)
-    date = models.DateTimeField(auto_now_add = True,null=True)
-    shares_number = models.DecimalField(decimal_places=2,default=0,max_digits=999)
-=======
+
 class VisData(models.Model):
     visdata_id = models.AutoField(primary_key=True)
     user_name = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
@@ -31,10 +22,9 @@ class VisData(models.Model):
     date = models.DateField(auto_now_add=False,null=True,editable=True)
     hour = models.TimeField(auto_now=False, auto_now_add=False,null=True,editable=True)
     shares_number = models.DecimalField(decimal_places=0,default=0,max_digits=999)
->>>>>>> Stashed changes
     course = models.DecimalField(decimal_places=2,default=0,max_digits=999)
     fare = models.DecimalField(decimal_places=2,default=0,max_digits=999)
 
 
     def __str__(self):
-        return self.name
+        return self.title

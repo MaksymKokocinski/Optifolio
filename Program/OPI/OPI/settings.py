@@ -136,4 +136,4 @@ EMAIL_HOST_USER = config('email_host_usr',default='')
 EMAIL_HOST_PASSWORD = config('email_host_pass',default='')
 
 
-
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

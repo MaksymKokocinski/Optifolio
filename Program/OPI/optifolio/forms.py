@@ -19,9 +19,9 @@ class CreateUserForm(UserCreationForm):
         fields = ['username','email','password1','password2']
 
 
-class VisTempForm(ModelForm):
+class VisForm(ModelForm):
     class Meta:
-        model = VisTemp
+        model = VisData
         fields = '__all__'
         exclude = ['user_name']
 
