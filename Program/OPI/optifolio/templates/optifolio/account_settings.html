@@ -1,4 +1,15 @@
-{%  extends 'optifolio/main.html' %}
+
+<html>
+    <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" type="text/css" href="..\static\css\main.css">
+    <link href="https://fonts.googleapis.com/css?family=Mulish&display=swap" rel="stylesheet" />
+    
+    </head>
+    <body class="log">
 {% load static %}
 {% block content %}
 
@@ -10,31 +21,20 @@
 		border-radius: 50%;
 	}
 </style>
-
-<br>
-<div class="row">
-	<div class="col-md-3">
-		<div class="card card-body">
-			<a class="btn btn-warning" href="{% url 'dashboard' %}"> &#8592; Wróć do profilu</a>
-			<hr>
-			<h3 style="text-align: center">Ustawienia konta</h3>
-			<hr>
-			<img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" >
-		
-		</div>
-	</div>
-	<div class="col-md-9">
-		<div class="card card-body">
-			
+	<div class="kontener2">
+		<button type="button" class="close" aria-label="Close" style="margin-right:30px;margin-top:20px;position:relative;">
+       		<span aria-hidden="true"><a href="{% url 'dashboard' %}" style="text-decoration:none;">&times;</a></span>
+    	</button>
+		<div class="d-flex justify-content-center align-items-center" style="padding-top:190px;padding-left:100px;">
 			<form method="POST" action="" enctype="multipart/form-data">
 				{% csrf_token %}
 				{{form.as_p}}
 		
-			<input class="btn btn-primary" type="submit" name="Update Information">
+			<input class="zaloguj" type="submit" name="Update Information">
 			</form>
 		</div>
 	</div>
-</div>
+
 
 
 

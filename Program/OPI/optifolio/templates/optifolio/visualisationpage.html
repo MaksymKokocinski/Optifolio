@@ -1,9 +1,9 @@
 {% extends 'optifolio/main.html' %} 
 
 {% block content %}
-
-<table class="table">
-    <thead class="thead-dark">
+<div class="container container-max-width-md float-left" style="margin-top:150px;">
+<table class="table table-bordered">
+    <thead class="thead-light">
       <tr>
         <th scope="col">Nazwa</th>
         <th scope="col">Kup/Sprzedaj</th>
@@ -21,10 +21,10 @@
         <td>{{ temp.date }}</td>
         <td>{{ temp.shares_number }}</td>
         <td>{{ temp.course }}</td>
-        <td>{{ temp.fares }}</td>
+        <td>{{ temp.fare }}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  
+  </div>
 {% endblock %}
