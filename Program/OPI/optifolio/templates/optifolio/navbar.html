@@ -24,7 +24,6 @@
     <div class="sidebar-header"><img src = "{% static 'images/logo_P1OydgH.png'%}"><span class="opt">Optifolio</span></div>
     <div id="navbarNav">
       <ul class="list-unstyled components">
-        {% if request.user.is_staff %}
         <li class="active">
           <a class="nav-link sideprzycisk d-flex align-items-center" href="{% url 'summary' %}">Portfolia</a>
 

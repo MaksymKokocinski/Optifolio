@@ -15,19 +15,16 @@ class Customer(models.Model):
 		
 
 class VisData(models.Model):
-    visdata_id = models.AutoField(primary_key=True)
+    id = models.BigIntegerField(primary_key = True)
     user_name = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200, null=True)
     buy_sell = models.CharField(max_length=1, null=True)
     date = models.DateField(auto_now_add=False,null=True,editable=True)
     hour = models.TimeField(auto_now=False, auto_now_add=False,null=True,editable=True)
-    shares_number = models.DecimalField(decimal_places=0,default=0,max_digits=999)
-    course = models.DecimalField(decimal_places=2,default=0,max_digits=999)
-    fare = models.DecimalField(decimal_places=2,default=0,max_digits=999)
-
-
-   
-
+    shares_number = models.DecimalField(decimal_places=0,default=0,max_digits=999,null=True)
+    course = models.DecimalField(decimal_places=2,default=0,max_digits=999,null=True)
+    fare = models.DecimalField(decimal_places=2,default=0,max_digits=999,null=True)
     
+
     def __str__(self):
         return self.title
