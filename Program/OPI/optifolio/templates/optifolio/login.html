@@ -43,7 +43,7 @@
             <!-- form-group// -->   
             {% for message in messages %}
                 {% csrf_token %}
-                <p> {{message}}</p>
+               {{message}}
             {% endfor %}
             <div class="form-group">
                 <button type="submit" class="zaloguj"> Zaloguj się  </button>

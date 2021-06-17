@@ -20,26 +20,27 @@
   }
 </style>
 
-<nav style="height:50px;" class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <img src = "{% static 'images/logo_P1OydgH.png'%}">
+<nav id="sidebar" style="float:left;">
+    <div class="sidebar-header"><img src = "{% static 'images/logo_P1OydgH.png'%}"><span class="opt">Optifolio</span></div>
     <div id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="list-unstyled components">
         {% if request.user.is_staff %}
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'summary' %}">Podsumowanie</a>
+        <li class="active">
+          <a class="nav-link sideprzycisk d-flex align-items-center" href="{% url 'summary' %}">Portfolia</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'visualisationpage' %}">Wizualizacja</a>
+        <li class="active">
+          <a class="nav-link sideprzycisk d-flex align-items-center" href="{% url 'visualisationpage' %}">Wizualizacja</a>
         </li>
         {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'account' %}">Ustawienia</a>
+        <li class="active">
+          <a class="nav-link sideprzycisk align-items-center" href="{% url 'account' %}">Ustawienia</a>
         </li>
         
         {% endif %}
       </ul>
     </div>
-    <span class="hello-msg ml-auto">Hello, {{request.user}}</span>
-    <span><a class="hello-msg ml-auto"  href="{% url 'logout' %}">Logout</a></span>
   </nav>
+      <span class="float-right active" style="padding-top:30px;padding-left:5px;padding-right:70px;"><a href="{% url 'logout' %}" style="text-decoration:none;color:black;">Logout</a></span>
+    <span class="float-right" style="color:black;padding-top:30px;">Hello, {{request.user}}</span>
+
   </html>

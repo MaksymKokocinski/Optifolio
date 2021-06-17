@@ -5,6 +5,7 @@
 
 body{
     font-family: Mulish;
+    background-color:#F8F8FB;
 }
 
 
@@ -149,6 +150,58 @@ a{
    margin-left: 485px;
 
  }
+ 
+ .opt{
+  font-family: Mulish;
+  font-size: 19px;
+  color: #A4A6B3;
+  font-weight:bold;
+  padding-left: 5px;
+ }
+
+ #sidebar{
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  background-color: #394141;
+  height: 100%;
+  position: fixed;
+ }
+
+ #sidebar .sidebar-header {
+  padding-left: 30px;
+  padding-top:20px;
+  padding-bottom: 40px;
+}
+.sideprzyciskmain{
+  height: 56px;
+  width: 100%;
+  background-color: #42494A;
+  color:#DDE2FF;
+  padding-left: 55px;
+}
+.sideprzyciskmain:hover{
+  height: 56px;
+  width: 100%;
+  background-color: #42494A;
+  color:#DDE2FF;
+  padding-left: 55px;
+}
+
+.sideprzycisk{
+  height: 56px;
+  width: 100%;
+  color:#A4A6B3;
+  padding-left: 55px;
+}
+
+.sideprzycisk:hover{
+  height: 56px;
+  width: 100%;
+  background-color: #42494A;
+  color:#DDE2FF;
+  padding-left: 55px;
+}
 
  .rej{
     border-top-left-radius: 30px;
