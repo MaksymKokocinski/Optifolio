@@ -24,13 +24,14 @@
     <img src = "{% static 'images/logo_P1OydgH.png'%}">
     <div id="navbarNav">
       <ul class="navbar-nav">
-        {% if request.user.is_staff %}
+        
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'summary' %}">Podsumowanie</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'visualisationpage' %}">Wizualizacja</a>
         </li>
+        {% if request.user.is_staff %}
         {% else %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'account' %}">Ustawienia</a>
