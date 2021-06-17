@@ -15,7 +15,7 @@ class Customer(models.Model):
 		
 
 class VisData(models.Model):
-    id = models.BigIntegerField(primary_key = True)
+    visdata_id = models.AutoField(primary_key=True,default=0)
     user_name = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200, null=True)
     buy_sell = models.CharField(max_length=1, null=True)
