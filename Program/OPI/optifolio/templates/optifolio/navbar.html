@@ -27,10 +27,12 @@
         {% if request.user.is_staff %}
         <li class="active">
           <a class="nav-link sideprzycisk d-flex align-items-center" href="{% url 'summary' %}">Portfolia</a>
+
         </li>
         <li class="active">
           <a class="nav-link sideprzycisk d-flex align-items-center" href="{% url 'visualisationpage' %}">Wizualizacja</a>
         </li>
+        {% if request.user.is_staff %}
         {% else %}
         <li class="active">
           <a class="nav-link sideprzycisk align-items-center" href="{% url 'account' %}">Ustawienia</a>

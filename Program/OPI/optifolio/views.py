@@ -42,7 +42,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('summary')
+            return redirect('adminpage')
         else:
             messages.info(request, 'Username OR Password is incorrect')
 
@@ -60,7 +60,7 @@ def logoutUser(request):
 def userPage(request):
 
     context = {}
-    return render(request, 'optifolio/user.html', context)
+    return render(request, 'optifolio/userpage.html', context)
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['customer'])
@@ -87,10 +87,10 @@ def homepage(request):
 
 @login_required(login_url='homepage')
 @admin_only
-def dashboard(request):
+def adminpage(request):
     
     context = {}
-    return render(request, 'optifolio/dashboard.html', context)
+    return render(request, 'optifolio/adminpage.html', context)
 
 
 @login_required(login_url='login')
@@ -103,8 +103,7 @@ def customer(request, pk):
 
 ##################################
 
-@login_required(login_url='login')
-@allowed_users(allowed_roles=['admin'])
+@unauthenticated_user
 def visualisationPage(request):
 
     visdata = VisData.objects.all()
@@ -112,8 +111,8 @@ def visualisationPage(request):
     return render(request, 'optifolio/visualisationpage.html', {'visdata':visdata})
 
 
-@login_required(login_url='login')
-@allowed_users(allowed_roles=['admin'])
+
+@unauthenticated_user
 def summaryPage(request):
     visdata = VisData.objects.all()
     
@@ -121,6 +120,7 @@ def summaryPage(request):
 
     shares_num = visdata.aggregate(Sum(('shares_number')))
     shares_num_sum = (shares_num['shares_number__sum'])
+    
 
     profit_earned = visdata.aggregate(Sum(('course')))
     profit_sum = ("%.3f" % profit_earned['course__sum'])

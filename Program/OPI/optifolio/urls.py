@@ -12,10 +12,10 @@ urlpatterns = [
     path('login/', views.loginPage, name='login'),
     path('logout/', views.logoutUser, name='logout'),
     
-    path('', views.dashboard, name="dashboard"),
+    path('', views.adminpage, name="adminpage"),
     path('customer/<str:pk>/', views.customer, name='customer'),
     
-    path('user/', views.userPage, name='user-page'), 
+    path('userpage/', views.userPage, name='user-page'), 
     path('account/', views.accountSettings, name ='account'),
  
 
