@@ -284,7 +284,22 @@ a{
   }
   }
   
-  
+  .wykres{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #394141;
+    width: 150px;
+    height: 35px;
+    border-style: none;
+    color:white;
+    font-family: Mulish;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 50px;
+ }
   /*---Firefox Bug Fix --*/
   .carousel-item {
     transition: -webkit-transform 0.5s ease;
