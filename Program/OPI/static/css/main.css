@@ -82,18 +82,15 @@ a{
  .opis{
     font-family: Mulish;
     font-size: 18px;
-    width:500px;
-    margin-top: 5%;
-    margin-left: 5%;
-    float:left;
  }
 
- .obrazek{
-    margin-top: 5%;
-    margin-left: 5%;
-    padding-left: 15%;
-    overflow: hidden;
- }
+.container{
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+}
 
  .zaloguj{
     border-top-left-radius: 30px;
@@ -159,16 +156,17 @@ a{
   padding-left: 5px;
  }
 
- #sidebar{
+ .sidebar{
   min-width: 250px;
   max-width: 250px;
   min-height: 100vh;
   background-color: #394141;
   height: 100%;
   position: fixed;
+  display: block;
  }
 
- #sidebar .sidebar-header {
+ .sidebar .sidebar-header {
   padding-left: 30px;
   padding-top:20px;
   padding-bottom: 40px;
@@ -219,6 +217,24 @@ a{
     margin-left: 50px;
     margin-top: 50px;
  }
+
+ .wykres{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #394141;
+    width: 150px;
+    height: 35px;
+    border-style: none;
+    color:white;
+    font-family: Mulish;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 50px;
+ }
+ 
 
  .inp {
      margin-top: 50px;
