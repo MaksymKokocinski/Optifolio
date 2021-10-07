@@ -6,6 +6,8 @@
 body{
     font-family: Mulish;
     background-color:#F8F8FB;
+    overflow-x: hidden;
+
 }
 
 
@@ -15,16 +17,16 @@ body{
     background-attachment:fixed;
     background-size: cover;
     background-position: center;
-    background-size: 100% 100%;
+
 }
 
 .home{
     background-image: url(../images/tlo2.png);
     background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
+    background-attachment: fixed;
     background-position: center;
-    background-size: 100% 100%;
+
+
 }
 .nag{
   margin-left: 40%;
