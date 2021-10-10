@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'OPI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Optifolio_db',
+        'USER' : 'postgres',
+        'PASSWORD' : 'qY0jzfIC',
+        'HOST' : 'localhost',
+        'PORT' : '5432'
     }
 }
 
