@@ -28,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for temp in visdata %}
+        <!--{% for temp in visdata %}!-->
         <tr>
           <th class=" text-center"><!--{{ temp.title }}!--></th>
           <td class=" text-center"><!--{{ temp.date }}!--></td>
@@ -37,7 +37,7 @@
           <td class=" text-center"><!--{{ temp.course }}!--></td>
           <td class=" text-center"><!--{{ temp.fare }}!--></td>
         </tr>
-        {% endfor %}
+        <!--{% endfor %}!-->
       </tbody>
     </table>
     </div>
@@ -57,15 +57,7 @@
         <canvas id="myChart"></canvas>
       </div>
     </div>
-    <script>
-      for (i=0;i<visdata;i++){
-          labels2+=title[i];
-          document.write(labels2);
-          data2+=shares_number[i];
-          document.write(data2)
-          print(data2)
-        }
-    </script>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
     // setup 
