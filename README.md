@@ -1,2 +1,1 @@
-# Optifolio
- Projekt inżynierski
+# Optifolio-dev
